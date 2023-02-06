@@ -1,16 +1,16 @@
 package superlog
 
 type structureLogger interface {
-	info(string)
+	info(any)
 	infow(string, ...interface{})
 
-	warn(string)
+	warn(any)
 	warnw(string, ...interface{})
 
-	error(string)
+	error(any)
 	errorw(string, ...interface{})
 }
 
 type unStructureLogger interface {
-	raw(string)
+	raw([]byte)
 }
