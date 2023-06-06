@@ -11,7 +11,7 @@ type LogType int
 
 // LogType value
 const (
-	Console LogType = iota
+	StdOut LogType = iota
 	DSPLog
 )
 
@@ -39,6 +39,12 @@ func init() {
 
 		mapUnStructureLog[DSPLog] = unStructureLog{
 			writer: writer,
+		}
+	}
+
+	{
+		mapUnStructureLog[StdOut] = unStructureLog{
+			writer: nil,
 		}
 	}
 }
